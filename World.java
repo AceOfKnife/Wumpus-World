@@ -40,7 +40,10 @@ public class World {
     }
 
     public void killWumpus() {
-        board[interests[0][0]][interests[0][1]].killWumpus();
+        int x = interests[0][0];
+        int y = interests[0][1];
+        board[x][y].killWumpus();
+        removeStench(x, y);
     }
 
     public void moveGold() {
@@ -96,6 +99,17 @@ public class World {
             board[x][y+1].setStench();
         if(y-1 >= 0)
             board[x][y-1].setStench();
+    }
+
+    public void removeStench(int x, int y) {
+        if(x+1 < 4)
+            board[x+1][y].removeStench();
+        if(x-1 >= 0)
+            board[x-1][y].removeStench();
+        if(y+1 < 4)
+            board[x][y+1].removeStench();
+        if(y-1 >= 0)
+            board[x][y-1].removeStench();
     }
 
     public void adjPit(int x, int y) {

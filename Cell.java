@@ -74,4 +74,8 @@ public class Cell {
         this.wumpus = false;
         this.value = -1;
     }
+
+    public void removeStench() {
+        this.stench = false;
+    }
 }

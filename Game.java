@@ -164,6 +164,7 @@ public class Game {
             player.changeScore(world.getCell(player.getCoord()).getVal());
             processInfo(info);
         } while (playing);
+        world.printBoard();
         System.out.println("Player Score: " + player.getScore());
     }
 
